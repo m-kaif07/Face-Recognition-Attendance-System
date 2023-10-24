@@ -36,16 +36,16 @@ encodeListKnown = find_encoding(images)
 print("encoding complete")
 
 
-# mark attendance function for marking the attendance in csv file
+# mark attendance function for marking the attendance in Excel file
 def markAttendance(name):
     curr_time = datetime.now()
     date_string = curr_time.strftime('%H:%M:%S')
 
     try:
-        # Try to open the Excel file, create it if it doesn't exist
+        # Try to open the Excel file, create it if it doesn't Exist
         wb = openpyxl.load_workbook('FACE-ATTENDANCE/attendance.xlsx')
     except FileNotFoundError:
-        # If the Excel file doesn't exist, create a new workbook and a worksheet with headers
+        # If the Excel file doesnt exist, create a new workbook and a worksheet with headers
         wb = openpyxl.Workbook()
         ws = wb.active
         ws.append(['Name', 'Time'])
