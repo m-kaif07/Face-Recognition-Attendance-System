@@ -12,10 +12,15 @@ face_recognition
 openpyxl (for Excel integration)
 
 Benefits :
+
 Efficiency: Automates attendance marking, reducing the administrative burden.
+
 Accuracy: Utilizes facial recognition for precise identification.
+
 Data Storage: Records attendance in an Excel file for easy access and data management.
+
 Prevents Duplicates: Ensures each individual is marked only once per session.
+
 
 <img width="480" alt="Screenshot 2023-10-25 174822" src="https://github.com/m-kaif07/Face-Recognition-Attendance-System/assets/140200216/eab4154f-19ba-490d-8941-6e5f070f29df">
 
