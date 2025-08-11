@@ -40,15 +40,16 @@ print("encoding complete")
 def markAttendance(name):
     curr_time = datetime.now()
     date_string = curr_time.strftime('%H:%M:%S')
+    curr_date = curr_time.date()
 
     try:
-        # Try to open the Excel file, create it if it doesn't Exist
+        # Try to open the Excel file, create it if it doesn't exist
         wb = openpyxl.load_workbook('FACE-ATTENDANCE/attendance.xlsx')
     except FileNotFoundError:
         # If the Excel file doesnt exist, create a new workbook and a worksheet with headers
         wb = openpyxl.Workbook()
-        ws = wb.active
-        ws.append(['Name', 'Time'])
+        ws = wb.active 
+        ws.append(['Name', 'Time', 'Date'])
     else:
         # If the Excel file already exists, select the active worksheet
         ws = wb.active
@@ -65,7 +66,7 @@ def markAttendance(name):
         return -1
     else:
         # Append a new row to the Excel file
-        ws.append([name, date_string])
+        ws.append([name, date_string, curr_date])
         wb.save('FACE-ATTENDANCE/attendance.xlsx')
         print(f"Attendance marked for {name} at {date_string}")
 
